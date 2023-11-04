@@ -1,18 +1,37 @@
 import React from 'react'
 import Image from "next/image"
+import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 
 interface Menulist {
     open: boolean,
-    handleOpen(): void
+    handleMenu(): void
 }
 
-const MenuList = ({ open, handleOpen }: Menulist) => {
+const MenuList = ({ open, handleMenu }: Menulist) => {
+
+    const pathname = usePathname()
+
+    const links = [
+        {
+            label: 'Inicio',
+            href: '/'
+        },
+        {
+            label: 'Nosotros',
+            href: '/about'
+        },
+        {
+            label: 'Contacto',
+            href: '/contact'
+        },
+    ]
 
     return (
         <div className={`${open ? 'opacity-100 visible' : 'invisible opacity-0'} transition-all fixed inset-0 bg-black/50 flex justify-end `}>
 
             <aside className={`${!open ? 'translate-x-48' : ''} transition-all w-48 bg-gray-500`}>
-                <div onClick={handleOpen} className='flex justify-end align-middle cursor-pointer px-4 py-4'>
+                <div onClick={handleMenu} className='flex justify-end align-middle cursor-pointer px-4 py-4'>
                     <Image
                         alt='Close'
                         src={'/close.svg'}
@@ -21,9 +40,19 @@ const MenuList = ({ open, handleOpen }: Menulist) => {
                     />
                 </div>
                 <nav className='flex mt-4 flex-col gap-3 px-3'>
-                    <a href="#" className='text-white p-2'>Enlace 1</a>
-                    <a href="#" className='text-white p-2'>Enlace 2</a>
-                    <a href="#" className='text-white p-2'>Enlace 3</a>
+                    {
+                        links?.map((link, i) => {
+                            return (
+                                <Link
+                                    key={i}
+                                    href={link?.href}
+                                    className={`${pathname === link?.href ? 'font-bold' : ''} text-base text-slate-100 p-3`}
+                                >
+                                    {link?.label}
+                                </Link>
+                            )
+                        })
+                    }
                 </nav>
             </aside>
 

@@ -1,12 +1,13 @@
 import React from 'react'
 import Image from "next/image"
+import Link from 'next/link'
 import Menu from './Menu'
 
 const Navbar = () => {
     return (
         <header className='w-full bg-gray-600'>
             <div className='container m-auto py-6 flex justify-between items-center'>
-                <a href="#">
+                <Link href={'/'}>
                     <Image
                         alt="Logo"
                         src={'/next.svg'}
@@ -14,7 +15,7 @@ const Navbar = () => {
                         height={100}
                         priority
                     />
-                </a>
+                </Link>
                 <Menu />
             </div>
         </header>

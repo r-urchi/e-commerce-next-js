@@ -1,24 +1,17 @@
 'use client'
-import React, { useState } from 'react'
+import React from 'react'
 import Button from './Button'
 
-const Counter = () => {
+const Counter = ({ max, counter, setCounter }: any) => {
 
-    const [counter, setCounter] = useState(1)
-
-    const increase = () => {
-        setCounter(counter + 1)
-    }
-
-    const decrease = () => {
-        setCounter(counter - 1)
-    }
+    const increase = () => counter < max && setCounter(counter + 1)
+    const decrease = () => counter > 1 && setCounter(counter - 1)
 
     return (
-        <div className='flex justify-center items-center gap-3'>
-            <Button onClick={() => decrease()} >-</Button>
-            <p className='flex justify-center items-center px-4 py-4'>{counter}</p>
-            <Button onClick={() => increase()} >+</Button>
+        <div className='flex items-center gap-3'>
+            <Button onClick={() => decrease()} className='active:bg-blue-600'>-</Button>
+            <p>{counter}</p>
+            <Button onClick={() => increase()} className='active:bg-blue-600'>+</Button>
         </div>
     )
 }

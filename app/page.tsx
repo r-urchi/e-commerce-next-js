@@ -1,4 +1,3 @@
-import Navbar from "./components/ui/Navbar"
 import Footer from "./components/ui/Footer"
 import Counter from "./components/ui/Counter"
 import Image from "next/image"
@@ -22,7 +21,6 @@ import Image from "next/image"
 export default function Home() {
   return (
     <>
-      <Navbar />
       <main className="container m-auto">
         <h1 className="text-4xl text-blue-600 text-center text-bold my-4">Electrodomésticos Capellari</h1>
         <hr />
