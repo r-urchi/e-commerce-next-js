@@ -5,7 +5,7 @@ export const mockData = [
         inStock: 100,
         price: 321654,
         slug: '985678',
-        image: '65465.jpg',
+        image: 'tv1.jpg',
         type: 'tvs'
     },
     {
@@ -14,7 +14,7 @@ export const mockData = [
         inStock: 100,
         price: 321654,
         slug: '567821',
-        image: '65465.jpg',
+        image: 'tv2.jpg',
         type: 'tvs'
     },
     {
@@ -23,7 +23,7 @@ export const mockData = [
         inStock: 100,
         price: 321654,
         slug: '987321',
-        image: '65465.jpg',
+        image: 'aire1.jpeg',
         type: 'aires'
     },
     {
@@ -32,7 +32,7 @@ export const mockData = [
         inStock: 100,
         price: 8987,
         slug: '321567',
-        image: '65465.jpg',
+        image: 'aire2.jpeg',
         type: 'aires'
     },
     {
@@ -41,7 +41,7 @@ export const mockData = [
         inStock: 100,
         price: 535755,
         slug: '654987',
-        image: '65465.jpg',
+        image: 'horno1.png',
         type: 'hornos'
     },
     {
@@ -50,7 +50,7 @@ export const mockData = [
         inStock: 100,
         price: 5637,
         slug: '456789',
-        image: '65465.jpg',
+        image: 'horno2.jpg',
         type: 'hornos'
     },
 ]

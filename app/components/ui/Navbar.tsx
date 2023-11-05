@@ -10,7 +10,7 @@ const Navbar = () => {
                 <Link href={'/'}>
                     <Image
                         alt="Logo"
-                        src={'/next.svg'}
+                        src={'/capellari.png'}
                         width={100}
                         height={100}
                         priority

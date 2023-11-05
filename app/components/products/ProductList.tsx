@@ -9,7 +9,7 @@ type Category = {
 
 const ProductList = ({ category }: Category) => {
 
-  const items = category === 'todos' ? mockData : mockData?.filter((item: Item) => item?.type === category)
+  const items = category === 'all' ? mockData : mockData?.filter((item: Item) => item?.type === category)
 
   return (
     <section className='container m-auto flex justify-center items-center gap-12 flex-wrap'>

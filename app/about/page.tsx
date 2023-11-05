@@ -14,7 +14,7 @@ const About = () => {
 
     return (
         <>
-            <main className='container m-auto'>
+            <main className='container m-auto min-h-screen'>
                 <h1 className='text-4xl text-blue-600 my-4'>Nostros</h1>
                 <hr />
                 <p className='text-base mt-4'>SITIO EN CONSTRUCCIÓN</p>

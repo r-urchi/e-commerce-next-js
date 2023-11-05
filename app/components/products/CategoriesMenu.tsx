@@ -3,7 +3,7 @@ import React from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 
-interface CategoriLink {
+interface CategoryLink {
     label: string,
     href: string,
 }
@@ -13,7 +13,7 @@ const CategoriesMenu = () => {
     const pathname = usePathname()
 
     const links = [
-        { label: 'Todos', href: '/products/todos' },
+        { label: 'Todos', href: '/products/all' },
         { label: 'TVs', href: '/products/tvs' },
         { label: 'Aires', href: '/products/aires' },
         { label: 'Hornos', href: '/products/hornos' }
@@ -22,7 +22,7 @@ const CategoriesMenu = () => {
     return (
         <aside className='flex flex-col gap-3'>
             {
-                links?.map((link: CategoriLink) => (
+                links?.map((link: CategoryLink) => (
                     <Link
                         key={link?.label}
                         href={link?.href}

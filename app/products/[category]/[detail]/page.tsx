@@ -8,7 +8,7 @@ const DetailPage = ({ params }: ParamsCategory) => {
   const { detail } = params
 
   return (
-    <main className='container m-auto mt-10'>
+    <main className='container m-auto mt-10 min-h-screen'>
       <ProductDetail slug={detail} />
     </main>
   )
