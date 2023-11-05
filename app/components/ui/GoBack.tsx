@@ -2,11 +2,11 @@
 import React from 'react'
 import { useRouter } from 'next/navigation'
 
-const GoBack = ({...args}) => {
-    const router = useRouter()
+const GoBack = ({ ...args }) => {
+  const router = useRouter()
   return (
     <button onClick={() => router?.back()} {...args}>
-        Volver
+      Volver
     </button>
   )
 }

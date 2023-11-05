@@ -1,11 +1,15 @@
 import React from 'react'
 import ProductDetail from '@/app/components/products/ProductDetail'
+import type { ParamsCategory } from '../page'
 
-const DetailPage = ({ params }: any) => {
-  const { slug } = params
+
+const DetailPage = ({ params }: ParamsCategory) => {
+
+  const { detail } = params
+
   return (
     <main className='container m-auto mt-10'>
-      <ProductDetail slug={slug} />
+      <ProductDetail slug={detail} />
     </main>
   )
 }

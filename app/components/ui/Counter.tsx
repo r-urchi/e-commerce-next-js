@@ -2,7 +2,13 @@
 import React from 'react'
 import Button from './Button'
 
-const Counter = ({ max, counter, setCounter }: any) => {
+type Counter = {
+    max: number | any,
+    counter: number,
+    setCounter: (count: number) => void
+}
+
+const Counter = ({ max, counter, setCounter }: Counter) => {
 
     const increase = () => counter < max && setCounter(counter + 1)
     const decrease = () => counter > 1 && setCounter(counter - 1)

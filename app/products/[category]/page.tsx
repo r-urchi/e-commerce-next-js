@@ -8,7 +8,15 @@ export async function generateMetadata({ params, searchParams }: any, parent: an
   }
 }
 
-const Products = ({ params }: any) => {
+export type ParamsCategory = {
+  params: Category
+}
+export interface Category {
+  category: string
+  detail: string
+}
+
+const Products = ({ params }: ParamsCategory) => {
 
   const { category } = params
 

@@ -18,6 +18,10 @@ const MenuList = ({ open, handleMenu }: Menulist) => {
             href: '/'
         },
         {
+            label: 'Productos',
+            href: '/products/todos'
+        },
+        {
             label: 'Nosotros',
             href: '/about'
         },

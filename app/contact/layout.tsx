@@ -1,6 +1,6 @@
 export default function ContactLayout({ children, }: { children: React.ReactNode }) {
 
-    return(
+    return (
         <>
             {children}
             <footer className="bg-gray-200 w-full">

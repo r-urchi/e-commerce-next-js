@@ -26,13 +26,6 @@ export default function Home() {
         <hr />
         <p className="text-base text-center mt-4">Somos una empresa familiar que desde 1923 contamos con una larga tradición en la venta de electrodomésticos. <br />
           La pasión y el compromiso con la satisfacción del cliente y la excelencia en productos han sido nuestro sello distintivos a lo largo de los años.</p>
-        <Counter />
-        <Image
-          alt="Image"
-          src={'https://static.miraheze.org/greatcharacterswiki/thumb/0/09/Goku.png/450px-Goku.png'}
-          width={200}
-          height={200}
-        />
       </main>
       <Footer />
     </>

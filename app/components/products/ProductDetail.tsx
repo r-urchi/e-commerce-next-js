@@ -3,10 +3,11 @@ import { mockData } from '@/app/data/products'
 import Image from 'next/image'
 import QtySelector from './QtySelector'
 import GoBack from '../ui/GoBack'
+import type { Item } from './ProductCard'
 
-const ProductDetail = ({ slug }: any) => {
+const ProductDetail = ({ slug }: Item) => {
 
-  const item = mockData?.find((product: any) => product?.slug === slug)
+  const item = mockData?.find((product: Item) => product?.slug === slug)
 
   return (
     <div className='max-w-4xl m-auto'>

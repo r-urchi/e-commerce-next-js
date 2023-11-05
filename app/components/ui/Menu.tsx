@@ -11,11 +11,11 @@ const Menu = () => {
     return (
         <>
             <div onClick={handleMenu} className='flex cursor-pointer'>
-                <Image 
-                alt='Menu'
-                src={'/menu.svg'}
-                width={40}
-                height={40}
+                <Image
+                    alt='Menu'
+                    src={'/menu.svg'}
+                    width={40}
+                    height={40}
                 />
             </div>
             <MenuList open={open} handleMenu={handleMenu} />
