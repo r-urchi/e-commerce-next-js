@@ -11,7 +11,7 @@ const ProductDetail = ({ slug }: Item) => {
 
   return (
     <div className='max-w-4xl m-auto'>
-      <GoBack className='text-sm text-blue-500 underline mb-6' />
+      <GoBack className='text-sm underline mb-6' />
 
       <section className='flex gap-6'>
         <div className='relative basis-1/2'>

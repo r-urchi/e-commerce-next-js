@@ -50,6 +50,7 @@ const MenuList = ({ open, handleMenu }: Menulist) => {
                                 <Link
                                     key={i}
                                     href={link?.href}
+                                    onClick={handleMenu}
                                     className={`${pathname === link?.href ? 'font-bold' : ''} text-base text-slate-100 p-3`}
                                 >
                                     {link?.label}

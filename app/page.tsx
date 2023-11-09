@@ -20,7 +20,7 @@ export default function Home() {
   return (
     <>
       <main className="container m-auto min-h-screen flex flex-col justify-start items-center">
-        <h1 className="text-6xl text-blue-600 text-center text-bold mt-4 mb-12">Electrodomésticos Capellari</h1>
+        <h1 className="text-6xl text-center text-gray-600 text-bold mt-4 mb-12">Electrodomésticos Capellari</h1>
         <hr />
         <Image
           alt="Logo"

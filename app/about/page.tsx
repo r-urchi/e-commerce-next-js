@@ -15,9 +15,8 @@ const About = () => {
     return (
         <>
             <main className='container m-auto min-h-screen'>
-                <h1 className='text-4xl text-blue-600 my-4'>Nostros</h1>
-                <hr />
-                <p className='text-base mt-4'>SITIO EN CONSTRUCCIÓN</p>
+                <h1 className='text-2xl border-b pb-4 my-4'>Nosotros</h1>
+                <p className='text-base my-4'>SITIO EN CONSTRUCCIÓN</p>
                 <Button onClick={() => router.back()}>
                     Volver
                 </Button>
