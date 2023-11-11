@@ -1,13 +1,18 @@
 import React from 'react'
-import { mockData } from '@/app/data/products'
 import Image from 'next/image'
 import QtySelector from './QtySelector'
 import GoBack from '../ui/GoBack'
 import type { Item } from './ProductCard'
 
-const ProductDetail = ({ slug }: Item) => {
+const ProductDetail = async ({ slug }: Item) => {
 
-  const item = mockData?.find((product: Item) => product?.slug === slug)
+  const item = await fetch(`http://localhost:3000/api/product/${slug}`, {
+    // cache: 'no-store',
+    next: {
+      revalidate: 0
+    }
+  })
+  .then(res => res.json())
 
   return (
     <div className='max-w-4xl m-auto'>
