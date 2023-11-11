@@ -1,4 +1,5 @@
 import React from 'react'
+import ContactForm from '../components/contact/ContactForm'
 
 export const metadata = {
     title: 'Electrodomesticos Capellari - Contacto',
@@ -10,7 +11,7 @@ const Contact = () => {
         <>
             <main className='container m-auto min-h-screen'>
                 <h1 className='text-2xl border-b pb-4 my-4'>Contacto</h1>
-                <p className='text-base mt-4'>Página de contacto</p>
+                <ContactForm />
             </main>
         </>
     )

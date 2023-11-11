@@ -29,6 +29,10 @@ const MenuList = ({ open, handleMenu }: Menulist) => {
             label: 'Contacto',
             href: '/contact'
         },
+        {
+            label: 'Posts',
+            href: '/posts'
+        },
     ]
 
     return (

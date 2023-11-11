@@ -1,15 +1,19 @@
 import React from 'react'
-import { mockData } from '@/app/data/products'
 import ProductCard from './ProductCard'
-import type { Item } from './ProductCard'
 
 type Category = {
   category: string,
 }
 
-const ProductList = ({ category }: Category) => {
+const ProductList = async ({ category }: Category) => {
 
-  const items = category === 'all' ? mockData : mockData?.filter((item: Item) => item?.type === category)
+  const items = await fetch(`http://localhost:3000/api/products/${category}`, { 
+    cache: 'force-cache',
+    next: {
+      tags: ['products']
+    }
+  })
+  .then((res: any) => res?.json())
 
   return (
     <div className='flex flex-col w-full'>
