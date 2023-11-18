@@ -8,7 +8,7 @@ type Category = {
 const ProductList = async ({ category }: Category) => {
 
   const items = await fetch(`http://localhost:3000/api/products/${category}`, { 
-    cache: 'force-cache',
+    cache: 'no-cache',
     next: {
       tags: ['products']
     }

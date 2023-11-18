@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Navbar from './components/ui/Navbar'
 import Footer from './components/ui/Footer'
+import { CartProvider } from './components/context/CartContext'
 import './globals.css'
 
 export const metadata: Metadata = {
@@ -12,9 +13,11 @@ export default function RootLayout({ children, }: { children: React.ReactNode })
   return (
     <html lang="en">
       <body>
-        <Navbar />
-        {children}
-        <Footer />
+        <CartProvider>
+          <Navbar />
+          {children}
+          <Footer />
+        </CartProvider>
       </body>
     </html>
   )
