@@ -1,22 +1,41 @@
 'use client'
-import React, {useState, createContext, useContext} from 'react'
+import React, { useState, createContext, useContext } from 'react'
 import type { Item } from '../products/ProductCard'
 
-const CartContext = createContext({}) 
+const CartContext = createContext({})
 
 export const useCartContext = () => useContext(CartContext)
 
-export const CartProvider = ({children}: any) => {
+export const CartProvider = ({ children }: any) => {
 
     const [cart, setCart] = useState([])
 
     const addToCart = (item: Item) => {
+        //  @ts-ignore
         setCart([...cart, item])
     }
 
-    return(
+    const isInCart = (slug: string) => {
+        return cart?.some((item: Item) => { item?.slug === slug })
+    }
+
+    const totalQty = () => {
+        return cart?.reduce((acc: any, item: any) => acc + item?.quantity, 0)
+    }
+
+    const emptyCart = () => {
+        setCart([])
+    }
+
+    return (
         <CartContext.Provider
-            value={{addToCart}}
+            value={{
+                cart,
+                addToCart,
+                isInCart,
+                totalQty,
+                emptyCart
+            }}
         >
             {children}
         </CartContext.Provider>
