@@ -29,7 +29,7 @@ const ProductDetail = async ({ slug }: Item) => {
         </div>
         <div className='basis-1/2'>
           <h2 className='text-xl font-semibold border-b border-gray-200 pb-4 mb-4'>{item?.title}</h2>
-          <p className='text-4xl'>$ {item?.price}</p>
+          <p className='text-4xl'>$ {new Intl.NumberFormat('es-ar').format(Number(item?.price))}</p>
 
           <QtySelector item={item} />
         </div>

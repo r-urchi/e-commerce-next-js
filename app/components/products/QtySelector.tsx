@@ -9,9 +9,10 @@ const QtySelector = ({ item }: Product) => {
 
 
   const [quantity, setQuantity] = useState(1)
-  const {addToCart}: any = useCartContext()
-  
+  const { addToCart }: any = useCartContext()
+
   const handleAdd = () => {
+    
     addToCart({
       ...item,
       quantity

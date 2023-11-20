@@ -17,8 +17,10 @@ const Navbar = () => {
                         priority
                     />
                 </Link>
-                <Menu />
-                <CartWidget />
+                <div className='flex justify-center align-middle'>
+                    <Menu />
+                    <CartWidget />
+                </div>
             </div>
         </header>
     )

@@ -5,9 +5,8 @@ import { useCartContext } from '../context/CartContext'
 import Image from 'next/image'
 
 const CartWidget = () => {
-    
-    //  @ts-ignore
-    const { totalQty } = useCartContext()
+
+    const { totalQty }: any = useCartContext()
 
     return (
         <>

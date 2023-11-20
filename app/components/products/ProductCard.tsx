@@ -14,6 +14,7 @@ export interface Item {
   slug?: string | number,
   image?: string,
   type?: string
+  quantity?: number,
 }
 
 const ProductCard = ({ item }: Product) => {
@@ -34,7 +35,7 @@ const ProductCard = ({ item }: Product) => {
 
         <div className='px-4 border-t border-gray-200'>
           <h4 className='text-sm my-4'>{item?.title}</h4>
-          <p className='text-2xl font-semibold mb-6'>$ {item?.price}</p>
+          <p className='text-2xl font-semibold mb-6'>$ {new Intl.NumberFormat('es-ar').format(Number(item?.price))}</p>
         </div>
       </Link>
 

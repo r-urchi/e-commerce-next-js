@@ -20,7 +20,7 @@ export const CartProvider = ({ children }: any) => {
     }
 
     const totalQty = () => {
-        return cart?.reduce((acc: any, item: any) => acc + item?.quantity, 0)
+        return cart?.reduce((acc: number | any, item: Item) => acc + item?.quantity, 0)
     }
 
     const emptyCart = () => {
