@@ -1,6 +1,6 @@
 'use client'
 import React, { useState } from 'react'
-import Catalog from './catalog/page'
+import ProductCatalog from '../components/admin/ProductCatalog'
 import Button from '../components/ui/Button'
 
 const Admin = () => {
@@ -33,7 +33,7 @@ const Admin = () => {
         <>
             <main className="container m-auto min-h-screen">
                 <h1 className="text-2xl border-b pb-4 my-4">Admin</h1>
-                {!validUser ?
+                {/* {!validUser ?
                     <form onSubmit={handleSubmit}>
                         <div className='my-4'>
                             <label htmlFor="username">Usuario:</label>
@@ -62,8 +62,8 @@ const Admin = () => {
                         </Button>
                     </form>
                     : <Catalog/>
-                }
-
+                } */}
+                <ProductCatalog />
             </main>
         </>
     )
