@@ -1,6 +1,5 @@
 import React from 'react'
 import Link from 'next/link'
-import Button from '@/app/components/ui/Button'
 
 const ProductCatalog = async () => {
 
@@ -14,7 +13,7 @@ const ProductCatalog = async () => {
             <div className='flex flex-col align-middle justify-center'>
 
                 {
-                    items?.map((item: any, i:number) => (
+                    items?.map((item: any, i: number) => (
                         <div key={i} className='flex flex-col align-top justify-start p-4 border-2 border-black my-2'>
                             <p>Titulo: {item?.title}</p>
                             <p>Descripcion: {item?.description}</p>
@@ -23,9 +22,19 @@ const ProductCatalog = async () => {
                             <p>Slug: {item?.slug}</p>
                             <p>Imagen: {item?.image}</p>
                             <p>Tipo: {item?.type}</p>
-                            <div>
-                                <Button className=' bg-green-600 mt-4 mr-4'>Editar</Button>
-                                <Button className=' bg-red-600  mt-4 mr-4'>Eliminar</Button>
+                            <div className='flex align-middle justify-start my-4'>
+                                <Link
+                                    href={`/admin/edit/${item?.slug}`}
+                                    className=' bg-green-400 rounded p-2 text-white mr-2'
+                                >
+                                    Editar
+                                </Link>
+                                <Link
+                                    href={`/admin/delete/${item?.slug}`}
+                                    className=' bg-red-600 rounded p-2 text-white mr-2'
+                                >
+                                    Eliminar
+                                </Link>
                             </div>
                         </div>
                     ))

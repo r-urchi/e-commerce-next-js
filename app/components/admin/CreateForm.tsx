@@ -1,13 +1,23 @@
 'use client'
 import React, { useState } from 'react'
 import Button from '../ui/Button'
+import { ref, uploadBytes, getDownloadURL } from 'firebase/storage'
 import { doc, setDoc } from 'firebase/firestore'
-import { db } from '@/firebase/config'
+import { db, storage } from '@/firebase/config'
 
-const createProduct = async (values: any) => {
+const createProduct = async (values: any, file: any) => {
+
+    const storageRef = ref(storage, values?.slug)
+    const fileSnapshot = await uploadBytes(storageRef, file)
+    const fileUrl = await getDownloadURL(fileSnapshot.ref)
+
     const docRef = doc(db, 'products', values.slug)
-    return setDoc(docRef, {...values})
-    .then(() => console.log('produto agregado'))
+
+    return setDoc(docRef, {
+        ...values,
+        image: fileUrl
+    })
+        .then(() => console.log('produto agregado'))
 }
 
 const CreateForm = () => {
@@ -18,9 +28,10 @@ const CreateForm = () => {
         inStock: 0,
         price: 0,
         slug: '',
-        image: '',
         type: '',
     })
+
+    const [file, setFile] = useState(null)
 
     const handleChange = (e: any) => {
         setValues({
@@ -31,7 +42,7 @@ const CreateForm = () => {
 
     const handleSubmit = async (e: any) => {
         e.preventDefault()
-        await createProduct(values)
+        await createProduct(values, file)
     }
 
     return (
@@ -45,6 +56,15 @@ const CreateForm = () => {
                     className='p-2 rounded w-full border border-blue-100 block my-4'
                     name='slug'
                     onChange={handleChange}
+                />
+
+                <label >Imagen:</label>
+                <input
+                    required
+                    type="file" 
+                    className='p-2 rounded w-full border border-blue-100 block my-4'
+                    name='image'
+                    onChange={(e: any) => setFile(e.target.files[0])}
                 />
 
                 <label >Título:</label>
