@@ -8,7 +8,7 @@ const LogOutButton = () => {
     const { logOut }: any = useAuthContext()
 
     return (
-        <Button onClick={() => logOut()} className='bg-red-500'>Cerrar sesión</Button>
+        <Button onClick={() => logOut()} className='bg-red-500 mt-8'>Cerrar sesión</Button>
     )
 }
 

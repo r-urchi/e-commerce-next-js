@@ -1,7 +1,9 @@
 'use client'
-import { auth, provider } from "@/firebase/config"
 import React, { useContext, createContext, useState, useEffect } from "react"
+import { auth, db, provider } from "@/firebase/config"
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut, signInWithPopup } from "firebase/auth"
+import { doc, getDoc } from "firebase/firestore"
+import { useRouter } from "next/navigation"
 
 
 const AuthContext = createContext()
@@ -11,11 +13,12 @@ export const useAuthContext = () => useContext(AuthContext)
 
 export const AuthProvider = ({ children }: any) => {
     const [user, setUser] = useState({
-        logged: false,
+        logged: true,
         email: null,
         uid: null
     })
 
+    const router = useRouter()
 
     const registerUser = async (values: any) => {
         await createUserWithEmailAndPassword(auth, values?.email, values?.password)

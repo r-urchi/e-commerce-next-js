@@ -27,7 +27,7 @@ const ProductCard = ({ item }: Product) => {
       >
         <Image
           alt={item?.title ? item?.title : 'Producto'}
-          src={`/imgs/products/${item?.image}`}
+          src={item?.image}
           width={288}
           height={288}
           style={{ objectFit: 'contain', minHeight: '288px' }}
