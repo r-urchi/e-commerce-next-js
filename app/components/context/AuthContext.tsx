@@ -38,15 +38,24 @@ export const AuthProvider = ({ children }: any) => {
 
 
     useEffect(() => {
-        onAuthStateChanged(auth, (user) => {
-            console.log(user)
+        onAuthStateChanged(auth, async (user) => {
 
             if (user) {
-                setUser({
-                    logged: true,
-                    email: user.email,
-                    uid: user.uid
-                })
+
+                const docRef = doc(db, 'roles', user.uid)
+                const userDoc = await getDoc(docRef)
+
+                if (userDoc.data()?.rol === 'admin') {
+                    setUser({
+                        logged: true,
+                        email: user.email,
+                        uid: user.uid
+                    })
+                } else {
+                    router.push('unauthorized')
+                    logOut()
+                }
+
             } else {
                 setUser({
                     logged: false,

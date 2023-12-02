@@ -17,7 +17,7 @@ const CartItem = (item: Item | any) => {
 
       <div className='relative basis-1/2'>
         <Image
-          src={`/imgs/products/${image}`}
+          src={image}
           alt='Producto'
           width={100}
           height={100}
