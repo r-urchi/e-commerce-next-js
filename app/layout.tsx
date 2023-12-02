@@ -3,6 +3,7 @@ import Navbar from './components/ui/Navbar'
 import Footer from './components/ui/Footer'
 import { CartProvider } from './components/context/CartContext'
 import './globals.css'
+import { AuthProvider } from './components/context/AuthContext'
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -13,11 +14,13 @@ export default function RootLayout({ children, }: { children: React.ReactNode })
   return (
     <html lang="en">
       <body>
-        <CartProvider>
-          <Navbar />
-          {children}
-          <Footer />
-        </CartProvider>
+        <AuthProvider>
+          <CartProvider>
+            <Navbar />
+            {children}
+            <Footer />
+          </CartProvider>
+        </AuthProvider>
       </body>
     </html>
   )
