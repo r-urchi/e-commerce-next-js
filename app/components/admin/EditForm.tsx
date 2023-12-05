@@ -5,6 +5,7 @@ import { db, storage } from '@/firebase/config'
 import { doc, updateDoc } from 'firebase/firestore'
 import { ref, uploadBytes, getDownloadURL } from 'firebase/storage'
 
+
 const updateProduct = async (slug: string, values: any, file: any) => {
   let fileUrl = values?.image
 

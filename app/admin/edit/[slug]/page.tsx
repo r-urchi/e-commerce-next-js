@@ -1,7 +1,15 @@
 import React from 'react'
 import EditForm from '@/app/components/admin/EditForm'
 
-const EditPage = async ({ params }: any) => {
+export type ParamsProduct = {
+    params: Slug
+}
+
+interface Slug {
+    slug: string
+}
+
+const EditPage = async ({ params }: ParamsProduct) => {
 
     const { slug } = params
 

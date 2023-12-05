@@ -5,7 +5,6 @@ import { createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthState
 import { doc, getDoc } from "firebase/firestore"
 import { useRouter } from "next/navigation"
 
-
 const AuthContext = createContext()
 
 export const useAuthContext = () => useContext(AuthContext)
@@ -22,14 +21,26 @@ export const AuthProvider = ({ children }: any) => {
 
     const registerUser = async (values: any) => {
         await createUserWithEmailAndPassword(auth, values?.email, values?.password)
+
+        setTimeout(() => {
+            window.location.reload()
+        }, 2000);
     }
 
     const loginUser = async (values: any) => {
         await signInWithEmailAndPassword(auth, values?.email, values?.password)
+
+        setTimeout(() => {
+            window.location.reload()
+        }, 2000);
     }
 
     const logOut = async () => {
         await signOut(auth)
+
+        setTimeout(() => {
+            window.location.reload()
+        }, 1000);
     }
 
     const googleLogin = async () => {
@@ -42,19 +53,19 @@ export const AuthProvider = ({ children }: any) => {
 
             if (user) {
 
-                const docRef = doc(db, 'roles', user.uid)
-                const userDoc = await getDoc(docRef)
+                // const docRef = doc(db, 'roles', user.uid)
+                // const userDoc = await getDoc(docRef)
 
-                if (userDoc.data()?.rol === 'admin') {
+                // if (userDoc.data()?.rol === 'admin') {
                     setUser({
                         logged: true,
                         email: user.email,
                         uid: user.uid
                     })
-                } else {
-                    router.push('unauthorized')
-                    logOut()
-                }
+                // } else {
+                //     router.push('unauthorized')
+                //     logOut()
+                // }
 
             } else {
                 setUser({

@@ -4,8 +4,9 @@ import Button from '../ui/Button'
 import { ref, uploadBytes, getDownloadURL } from 'firebase/storage'
 import { doc, setDoc } from 'firebase/firestore'
 import { db, storage } from '@/firebase/config'
+import type { Item } from '../products/ProductCard'
 
-const createProduct = async (values: any, file: any) => {
+const createProduct = async (values: Item | any, file: any) => {
 
     const storageRef = ref(storage, values?.slug)
     const fileSnapshot = await uploadBytes(storageRef, file)

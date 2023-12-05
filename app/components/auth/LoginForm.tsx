@@ -19,7 +19,7 @@ const LoginForm = () => {
         })
     }
 
-    const handleSubmit = async (e: any) => {
+    const handleSubmit = (e: any) => {
         e.preventDefault()
     }
 
