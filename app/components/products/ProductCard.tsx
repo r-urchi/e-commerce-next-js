@@ -37,6 +37,14 @@ const ProductCard = ({ item }: Product) => {
           <h4 className='text-sm my-4'>{item?.title}</h4>
           <p className='text-2xl font-semibold mb-6'>$ {new Intl.NumberFormat('es-ar').format(Number(item?.price))}</p>
         </div>
+
+        {
+          item?.inStock === 0 && (
+            <p className='font-smibold text-red-500'>
+              Producto sin stock
+            </p>
+          )
+        }
       </Link>
 
     </article>

@@ -12,7 +12,7 @@ const ProductDetail = async ({ slug }: Item) => {
       revalidate: 0
     }
   })
-  .then(res => res.json())
+    .then(res => res.json())
 
   return (
     <div className='max-w-4xl m-auto'>
@@ -31,7 +31,11 @@ const ProductDetail = async ({ slug }: Item) => {
           <h2 className='text-xl font-semibold border-b border-gray-200 pb-4 mb-4'>{item?.title}</h2>
           <p className='text-4xl'>$ {new Intl.NumberFormat('es-ar').format(Number(item?.price))}</p>
 
-          <QtySelector item={item} />
+          {
+            item?.inStock === 0 ?
+              <></> :
+              <QtySelector item={item} />
+          }
         </div>
 
       </section>

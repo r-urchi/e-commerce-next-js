@@ -3,9 +3,33 @@ import React, { useState } from 'react'
 import Button from '../ui/Button'
 import { useCartContext } from '../context/CartContext'
 import { db } from '@/firebase/config'
-import { setDoc, doc, Timestamp } from 'firebase/firestore'
+import { setDoc, doc, Timestamp, writeBatch, getDoc } from 'firebase/firestore'
 
 const createOrder = async (values: any, items: any) => {
+
+    // const docsPromises = items?.map((slug: any) => {
+    //     const docRef = doc(db, 'products', slug)
+    //     return getDoc(docRef)
+    // })
+
+    // const docs = await Promise.all(docsPromises)
+    // const batch = writeBatch(db)
+    // const outOfStock: any[] = []
+
+    // docs?.forEach((doc: any) => {
+    //     const { inStock } = doc.data()
+    //     const itemInCart = items?.find((item: any) => item?.slug === doc?.slug)
+    //     if (itemInCart?.quantity >= inStock) {
+    //         batch.update(doc.ref, { inStock: inStock - itemInCart.quantity })
+    //     } else {
+    //         outOfStock.push(itemInCart)
+    //     }
+    // })
+
+    // if (outOfStock.length > 0) {
+    //     return outOfStock
+    // }
+
     const order = {
         client: values,
         items: items?.map((item: any) => ({
@@ -19,6 +43,7 @@ const createOrder = async (values: any, items: any) => {
 
     const docId = Timestamp.fromDate(new Date()).toMillis()
     const orderRef = doc(db, 'orders', String(docId))
+    // await batch.commit()
     await setDoc(orderRef, order)
 
     return docId
@@ -26,8 +51,6 @@ const createOrder = async (values: any, items: any) => {
 
 const ClientForm = () => {
     const { cart } = useCartContext()
-
-    console.log('cart ==>', cart)
 
     const [values, setValues] = useState({
         email: '',
@@ -74,7 +97,7 @@ const ClientForm = () => {
                         <input
                             type="email"
                             required
-                            placeholder='Dirección'
+                            placeholder='Email'
                             className='p-2 rounded w-1/2 border border-blue-100 block my-4'
                             name='email'
                             onChange={handleChange}
