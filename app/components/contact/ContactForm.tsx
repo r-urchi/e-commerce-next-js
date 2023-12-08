@@ -31,14 +31,14 @@ const ContactForm = () => {
                 type="email"
                 required
                 placeholder='Tu email'
-                className='p-2 rounded w-1/2 border border-blue-100 block my-4'
+                className='p-2 rounded w-full max-w-lg border border-blue-100 block my-4'
                 name='email'
                 onChange={handleChange}
             />
             <textarea
                 required
                 placeholder='Tu mensaje'
-                className='resize-none w-1/2 h-24 p-2 rounded border border-blue-100 block my-4'
+                className='resize-none w-full max-w-lg h-24 p-2 rounded border border-blue-100 block my-4'
                 name='text'
                 onChange={handleChange}
             />

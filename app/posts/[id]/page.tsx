@@ -16,7 +16,7 @@ const PostDetail = async ({ params }: any) => {
     const post = await getPostById(id)
 
     return (
-        <div className='container w-auto max-w-md'>
+        <div className='container p-4 w-auto max-w-md'>
             <h2 className='text2-xl'>{post?.title}</h2>
             <hr />
             <p>{post?.body}</p>

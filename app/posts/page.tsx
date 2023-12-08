@@ -23,14 +23,14 @@ const Posts = async () => {
     const posts = await getPosts()
 
     return (
-        <div className='container m-auto mt-6'>
+        <div className='container p-4 m-auto mt-6'>
             <h1>Posts</h1>
             <hr />
             <ul>
                 {
                     posts?.map((post: any) => (
                         <Link href={`posts/${post?.id}`} key={post?.id}>
-                            <li key={post?.id} className='my-4 list-disc'>
+                            <li key={post?.id} className='my-4 list-disc list-none'>
                                 {post?.title}
                             </li>
                         </Link>

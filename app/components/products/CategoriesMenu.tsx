@@ -20,7 +20,7 @@ const CategoriesMenu = () => {
     ]
 
     return (
-        <aside className='flex flex-col gap-3'>
+        <aside className='flex md:flex-col gap-3'>
             {
                 links?.map((link: CategoryLink) => (
                     <Link

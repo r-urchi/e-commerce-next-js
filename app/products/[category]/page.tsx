@@ -32,9 +32,9 @@ const Products = ({ params }: ParamsCategory) => {
   const { category } = params
 
   return (
-    <main className='container m-auto min-h-screen'>
+    <main className='container p-4 m-auto min-h-screen'>
       <h2 className='text-2xl my-10 border-b pb-4'>Productos</h2>
-      <div className='flex gap-10'>
+      <div className='flex flex-col md:flex-row gap-10'>
         <CategoriesMenu />
         {/* <Suspense fallback={<div>Cargando...</div>}> */}
         <ProductList category={category} />

@@ -1,6 +1,7 @@
 'use client'
 import React, { useState } from 'react'
 import Button from '../ui/Button'
+import GoBack from '../ui/GoBack'
 import { ref, uploadBytes, getDownloadURL } from 'firebase/storage'
 import { doc, setDoc } from 'firebase/firestore'
 import { db, storage } from '@/firebase/config'
@@ -47,7 +48,8 @@ const CreateForm = () => {
     }
 
     return (
-        <div className='container m-auto mt-6 max-w-lg'>
+        <div className='container p-4 m-auto mt-6 max-w-lg'>
+                  <GoBack className='font-semibold'/>
             <form onSubmit={handleSubmit} className='my-12'>
                 <label >Slug:</label>
                 <input

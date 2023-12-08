@@ -15,10 +15,10 @@ const ProductDetail = async ({ slug }: Item) => {
     .then(res => res.json())
 
   return (
-    <div className='max-w-4xl m-auto'>
+    <div className='max-w-4xl p-4 m-auto'>
       <GoBack className='text-sm underline mb-6' />
 
-      <section className='flex gap-6'>
+      <section className='flex flex-col sm:flex-row gap-6'>
         <div className='relative basis-1/2'>
           <Image
             src={item?.image}
@@ -37,9 +37,11 @@ const ProductDetail = async ({ slug }: Item) => {
               <QtySelector item={item} />
           }
         </div>
-
       </section>
-
+      <div className='w-full py-4'>
+        <h3 className='text-xl font-semibold border-b border-gray-200 pb-4 mb-4'>Descripción</h3>
+          {item?.description}
+        </div>
     </div>
   )
 }

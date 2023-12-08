@@ -20,7 +20,7 @@ export interface Item {
 const ProductCard = ({ item }: Product) => {
 
   return (
-    <article className='basis-72 shadow-lg rounded h-96'>
+    <article className='basis-72 shadow-lg rounded h-auto '>
       <Link
         href={`/products/detail/${item?.slug}`}
         className='flex flex-col'
@@ -30,7 +30,7 @@ const ProductCard = ({ item }: Product) => {
           src={item?.image}
           width={288}
           height={288}
-          style={{ objectFit: 'contain', minHeight: '288px' }}
+          style={{ objectFit: 'contain', minHeight: '288px', maxHeight: '288px' }}
         />
 
         <div className='px-4 border-t border-gray-200'>

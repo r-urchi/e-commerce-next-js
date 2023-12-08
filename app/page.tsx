@@ -19,8 +19,8 @@ export const metadata = {
 export default function Home() {
   return (
     <>
-      <main className="container m-auto min-h-screen flex flex-col justify-start items-center">
-        <h1 className="text-6xl text-center text-gray-600 text-bold mt-4 mb-12">Electrodomésticos Capellari</h1>
+      <main className="container m-auto p-4 min-h-screen flex flex-col justify-start items-center">
+        <h1 className="text-3xl md:text-6xl text-center text-gray-600 text-bold mt-4 mb-12">Electrodomésticos Capellari</h1>
         <hr />
         <Image
           alt="Logo"
@@ -29,7 +29,7 @@ export default function Home() {
           height={300}
           priority
         />
-        <p className="text-base text-center mt-8">Somos una empresa familiar que desde 1923 contamos con una larga tradición en la venta de electrodomésticos. <br />
+        <p className="text-xs md:text-base text-center mt-8">Somos una empresa familiar que desde 1923 contamos con una larga tradición en la venta de electrodomésticos. <br />
           La pasión y el compromiso con la satisfacción del cliente y la excelencia en productos han sido nuestro sello distintivos a lo largo de los años.</p>
       </main>
     </>

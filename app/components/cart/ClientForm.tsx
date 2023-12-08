@@ -1,6 +1,7 @@
 'use client'
 import React, { useState } from 'react'
 import Button from '../ui/Button'
+import Notification from './Notification'
 import { useCartContext } from '../context/CartContext'
 import { db } from '@/firebase/config'
 import { setDoc, doc, Timestamp, writeBatch, getDoc } from 'firebase/firestore'
@@ -51,6 +52,7 @@ const createOrder = async (values: any, items: any) => {
 
 const ClientForm = () => {
     const { cart } = useCartContext()
+    const [notification, setNotification] = useState(false)
 
     const [values, setValues] = useState({
         email: '',
@@ -69,43 +71,48 @@ const ClientForm = () => {
         e.preventDefault()
         const result = await createOrder(values, cart)
         console.log(result)
+        setNotification(true)
     }
 
     return (
         <>
-            {
-                cart && cart.length ?
-                    <form onSubmit={handleSubmit} className='my12'>
-                        <input
-                            type="text"
-                            required
-                            placeholder='Nombre'
-                            className='p-2 rounded w-1/2 border border-blue-100 block my-4'
-                            name='name'
-                            onChange={handleChange}
-                        />
+            {notification ? <Notification />
+                : <>
+                    {
+                        cart && cart.length ?
+                            <form onSubmit={handleSubmit} className='my12'>
+                                <input
+                                    type="text"
+                                    required
+                                    placeholder='Nombre'
+                                    className='p-2 rounded w-full md:w-1/2 border border-blue-100 block my-4'
+                                    name='name'
+                                    onChange={handleChange}
+                                />
 
-                        <input
-                            type="text"
-                            required
-                            placeholder='Dirección'
-                            className='p-2 rounded w-1/2 border border-blue-100 block my-4'
-                            name='address'
-                            onChange={handleChange}
-                        />
+                                <input
+                                    type="text"
+                                    required
+                                    placeholder='Dirección'
+                                    className='p-2 rounded w-full md:w-1/2 border border-blue-100 block my-4'
+                                    name='address'
+                                    onChange={handleChange}
+                                />
 
-                        <input
-                            type="email"
-                            required
-                            placeholder='Email'
-                            className='p-2 rounded w-1/2 border border-blue-100 block my-4'
-                            name='email'
-                            onChange={handleChange}
-                        />
+                                <input
+                                    type="email"
+                                    required
+                                    placeholder='Email'
+                                    className='p-2 rounded w-full md:w-1/2 border border-blue-100 block my-4'
+                                    name='email'
+                                    onChange={handleChange}
+                                />
 
-                        <Button type='submit'>Finalizar compra</Button>
-                    </form>
-                    : <></>
+                                <Button type='submit'>Finalizar compra</Button>
+                            </form>
+                            : <></>
+                    }
+                </>
             }
         </>
     )

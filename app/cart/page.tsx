@@ -7,7 +7,7 @@ const Cart = () => {
 
     return (
         <>
-            <main className="container m-auto min-h-screen">
+            <main className="container p-4 m-auto min-h-screen">
                 <h2 className="text-2xl border-b pb-4 my-4">Carrito</h2>
                 <GoBack className='text-sm underline mb-6' />
                 <CartList />

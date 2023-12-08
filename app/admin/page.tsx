@@ -8,7 +8,7 @@ const Admin = () => {
 
     return (
         <>
-            <main className="container m-auto min-h-screen">
+            <main className="container m-auto p-4 min-h-screen">
                 <LogOutButton />
                 <h1 className="text-2xl border-b pb-4 my-4">Admin</h1>
                 <ProductCatalog />
