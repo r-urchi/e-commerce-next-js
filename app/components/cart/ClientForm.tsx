@@ -51,7 +51,7 @@ const createOrder = async (values: any, items: any) => {
 }
 
 const ClientForm = () => {
-    const { cart } = useCartContext()
+    const { cart }: any = useCartContext()
     const [notification, setNotification] = useState(false)
 
     const [values, setValues] = useState({

@@ -27,6 +27,7 @@ const ProductCard = ({ item }: Product) => {
       >
         <Image
           alt={item?.title ? item?.title : 'Producto'}
+          // @ts-ignore
           src={item?.image}
           width={288}
           height={288}

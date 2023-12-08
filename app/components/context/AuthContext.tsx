@@ -5,6 +5,7 @@ import { createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthState
 import { doc, getDoc } from "firebase/firestore"
 import { useRouter } from "next/navigation"
 
+// @ts-ignore
 const AuthContext = createContext()
 
 export const useAuthContext = () => useContext(AuthContext)
@@ -59,7 +60,9 @@ export const AuthProvider = ({ children }: any) => {
                 // if (userDoc.data()?.rol === 'admin') {
                     setUser({
                         logged: true,
+                        // @ts-ignore
                         email: user.email,
+                        // @ts-ignore
                         uid: user.uid
                     })
                 // } else {
