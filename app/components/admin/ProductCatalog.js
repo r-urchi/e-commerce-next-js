@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 const ProductCatalog = async () => {
 
-    const items = await fetch(`http://e-commerce-next-js-green.vercel.app/api/products/all`, {
+    const items = await fetch(`http://${process.env.VERCEL_URL}/api/products/all`, {
         cache: 'no-store'
     }).then(r => r.json())
 

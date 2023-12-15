@@ -17,7 +17,7 @@ const ContactForm = () => {
 
     const handleSubmit = async (e) => {
         e?.preventDefault()
-        await fetch(`http://e-commerce-next-js-green.vercel.app/api/contact`,
+        await fetch(`http://${process.env.VERCEL_URL}/api/contact`,
             {
                 method: 'POST',
                 body: JSON.stringify(values)
