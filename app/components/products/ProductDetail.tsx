@@ -6,7 +6,7 @@ import type { Item } from './ProductCard'
 
 const ProductDetail = async ({ slug }: Item) => {
 
-  const item = await fetch(`${process.env.VERCEL_URL}/api/product/${slug}`, {
+  const item = await fetch(`http://localhost:3000/api/product/${slug}`, {
     // cache: 'no-store',
     next: {
       revalidate: 0
