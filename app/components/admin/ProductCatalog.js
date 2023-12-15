@@ -13,7 +13,7 @@ const ProductCatalog = async () => {
             <div className='flex flex-col align-middle justify-center'>
 
                 {
-                    items?.map((item: any, i: number) => (
+                    items?.map((item, i) => (
                         <div key={i} className='flex flex-col align-top justify-start p-4 border-2 border-black my-2'>
                             <p>Titulo: {item?.title}</p>
                             <p>Descripcion: {item?.description}</p>

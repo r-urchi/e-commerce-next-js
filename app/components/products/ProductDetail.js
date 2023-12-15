@@ -2,9 +2,8 @@ import React from 'react'
 import Image from 'next/image'
 import QtySelector from './QtySelector'
 import GoBack from '../ui/GoBack'
-import type { Item } from './ProductCard'
 
-const ProductDetail = async ({ slug }: Item) => {
+const ProductDetail = async ({ slug }) => {
 
   const item = await fetch(`http://localhost:3000/api/product/${slug}`, {
     // cache: 'no-store',

@@ -1,11 +1,7 @@
 import React from 'react'
 import ProductCard from './ProductCard'
 
-type Category = {
-  category: string,
-}
-
-const ProductList = async ({ category }: Category) => {
+const ProductList = async ({ category }) => {
 
   const items = await fetch(`http://localhost:3000/api/products/${category}`, { 
     cache: 'no-cache',
@@ -13,7 +9,7 @@ const ProductList = async ({ category }: Category) => {
       tags: ['products']
     }
   })
-  .then((res: any) => res?.json())
+  .then((res) => res?.json())
 
   return (
     <div className='flex flex-col w-full'>
@@ -23,7 +19,7 @@ const ProductList = async ({ category }: Category) => {
           :
           <section className='container m-auto flex justify-center items-center gap-12 flex-wrap '>
             {
-              items?.map((item: any) => <ProductCard key={item?.slug} item={item} />)
+              items?.map((item) => <ProductCard key={item?.slug} item={item} />)
             }
           </section>
       }
