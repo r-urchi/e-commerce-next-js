@@ -5,7 +5,7 @@ const EditPage = async ({ params }) => {
 
     const { slug } = params
 
-    const item = await fetch(`http://${process.env.VERCEL_URL}/api/product/${slug}`, {
+    const item = await fetch(`http://e-commerce-next-js-green.vercel.app/api/product/${slug}`, {
         cache: 'no-cache',
         
     })
