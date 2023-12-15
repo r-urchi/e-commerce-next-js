@@ -37,7 +37,7 @@ const Products = ({ params }: ParamsCategory) => {
       <div className='flex flex-col md:flex-row gap-10'>
         <CategoriesMenu />
         {/* <Suspense fallback={<div>Cargando...</div>}> */}
-        <ProductList category={category} />
+        {/* <ProductList category={category} /> */}
         {/* </Suspense> */}
       </div>
     </main>
