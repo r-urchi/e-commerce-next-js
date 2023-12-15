@@ -3,7 +3,7 @@ import ProductCard from './ProductCard'
 
 const ProductList = async ({ category }) => {
 
-  const items = await fetch(`${process.env.NEXT_PUBLIC_VERCEL_URL}/api/products/${category}`, { 
+  const items = await fetch(`${process.env.VERCEL_URL}/api/products/${category}`, { 
     cache: 'no-cache',
     next: {
       tags: ['products']
