@@ -1,16 +1,15 @@
 import React from 'react'
 import ProductCard from './ProductCard'
-import {items} from '../../../mockData' 
 
 const ProductList = async ({ category }) => {
 
-  // const items = await fetch(`${process.env.NEXT_PUBLIC_VERCEL_URL}/api/products/${category}`, { 
-  //   cache: 'no-cache',
-  //   next: {
-  //     tags: ['products']
-  //   }
-  // })
-  // .then((res) => res?.json())
+  const items = await fetch(`${process.env.NEXT_PUBLIC_VERCEL_URL}/api/products/${category}`, { 
+    cache: 'no-cache',
+    next: {
+      tags: ['products']
+    }
+  })
+  .then((res) => res?.json())
 
   return (
     <div className='flex flex-col w-full'>
