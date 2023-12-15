@@ -5,7 +5,7 @@ const EditPage = async ({ params }) => {
 
     const { slug } = params
 
-    const item = await fetch(`${process.env.VERCEL_URL}/api/product/${slug}`, {
+    const item = await fetch(`${process.env.NEXT_PUBLIC_VERCEL_URL}/api/product/${slug}`, {
         cache: 'no-cache',
         
     })
