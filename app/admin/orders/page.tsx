@@ -1,6 +1,6 @@
 import React from 'react'
 import LogOutButton from '@/app/components/admin/LogOutButton'
-import { db } from '@/firebase/config'
+import { db } from '../../../firebase/config'
 import { collection, getDocs } from 'firebase/firestore'
 
 const getOrders = async () => {

@@ -4,7 +4,7 @@ import Button from '../ui/Button'
 import GoBack from '../ui/GoBack'
 import { ref, uploadBytes, getDownloadURL } from 'firebase/storage'
 import { doc, setDoc } from 'firebase/firestore'
-import { db, storage } from '@/firebase/config'
+import { db, storage } from '../../../firebase/config'
 import type { Item } from '../products/ProductCard'
 
 const createProduct = async (values: Item | any, file: any) => {
