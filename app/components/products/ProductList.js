@@ -32,7 +32,6 @@ const ProductList = async ({ category }) => {
     );
   } catch (error) {
     console.error('Error al obtener los datos:', error);
-    // Puedes manejar el error de alguna manera aquí (por ejemplo, mostrando un mensaje de error al usuario)
     return <div>Error al cargar los datos</div>;
   }
 };
